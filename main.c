@@ -48,7 +48,7 @@ int main(int ac, char **av)
 }
 /*
  * handl_d - handl Ctrl+d
- * line - giving arg
+ * @line - giving arg
  *
  * Return: nothing
  */
