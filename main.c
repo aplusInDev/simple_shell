@@ -22,8 +22,8 @@ int main(int ac, char **av)
 			write(STDOUT_FILENO, "$ ", 2);
 		else if (fgets(line, MAX_L, stdin) == NULL)
 		{
-		    printf("\n");
-		    break;
+			printf("\n");
+			break;
 		}
 		if (ac == 1 && _getline(&input) <= 0)
 		{
