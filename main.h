@@ -9,6 +9,7 @@
 #include <dirent.h>
 #include <fcntl.h>
 
+#define MAX_LINE 1024
 extern char **environ;
 extern int EXIT_STATUS;
 
