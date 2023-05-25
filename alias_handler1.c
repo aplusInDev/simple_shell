@@ -9,7 +9,7 @@
  * @idx: arg5
  * @split: arg6
  * @line: arg7
- * Return:
+ * Return: 1
  */
 int _alias(int argc, char **args, char *name,
 		aliases *alias, int *idx, char **split, char *line)
