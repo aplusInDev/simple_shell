@@ -11,7 +11,7 @@ int main(int ac, char **av)
 {
 	aliases a;
 	int i = 0, v = 0;
-	char *input = NULL, *n = av[0], *line[MAX_L];
+	char *input = NULL, *n = av[0];
 
 	(void) ac;
 	a.name = NULL;
@@ -20,7 +20,6 @@ int main(int ac, char **av)
 	{
 		if (isatty(0) && ac == 1)
 			write(STDOUT_FILENO, "$ ", 2);
-		handl_d(line);
 		if (ac == 1 && _getline(&input) <= 0)
 		{
 			free(input);
@@ -45,18 +44,4 @@ int main(int ac, char **av)
 			return (0);
 	}
 	return (0);
-}
-/**
- * handl_d - handl Ctrl+d
- * @line: giving arg
- *
- * Return: nothing
- */
-void handl_d(char **line)
-{
-	if (_getline(line) == 0)
-	{
-		write(STDOUT_FILENO, "\n", 1);
-		exit(0);
-	}
 }

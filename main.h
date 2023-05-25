@@ -9,8 +9,6 @@
 #include <dirent.h>
 #include <fcntl.h>
 
-#define MAX_L 1024
-
 extern char **environ;
 extern int EXIT_STATUS;
 
