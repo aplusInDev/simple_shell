@@ -46,6 +46,12 @@ int main(int ac, char **av)
 	}
 	return (0);
 }
+/*
+ * handl_d - handl Ctrl+d
+ * line - giving arg
+ *
+ * Return: nothing
+ */
 void handl_d(char **line)
 {
 	if (_getline(line) == 0)
