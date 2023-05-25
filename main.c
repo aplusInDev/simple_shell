@@ -20,11 +20,6 @@ int main(int ac, char **av)
 	{
 		if (isatty(0) && ac == 1)
 			write(STDOUT_FILENO, "$ ", 2);
-		if (fgets(line, MAX_LINE, stdin) == NULL)
-		{
-			printf("\n");
-			break;
-		}
 		if (ac == 1 && _getline(&input) <= 0)
 		{
 			free(input);
