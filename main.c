@@ -12,6 +12,7 @@ int main(int ac, char **av)
 	aliases a;
 	int i = 0, v = 0;
 	char *input = NULL, *n = av[0];
+	char *line[MAX_L];
 
 	(void) ac;
 	a.name = NULL;
@@ -20,9 +21,9 @@ int main(int ac, char **av)
 	{
 		if (isatty(0) && ac == 1)
 			write(STDOUT_FILENO, "$ ", 2);
-		else if (fgets(line, MAX_L, stdin) == NULL)
+		else if (_getline(line) == 0)
 		{
-			printf("\n");
+			write(STDOUT_FILENO, "\n", 1);
 			break;
 		}
 		if (ac == 1 && _getline(&input) <= 0)
