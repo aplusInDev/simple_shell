@@ -50,7 +50,8 @@ char *check_ops(char **);
 int _getalias(aliases *, char *, int);
 int echo(char **);
 int print_string(int, char *);
-int cmd_selector(const char *, char **, char *, aliases *, int *, char **, char *);
+int cmd_selector(const char *,
+		char **, char *, aliases *, int *, char **, char *);
 int change_dir(int, char **, char *, aliases *, int *, char **, char *);
 int exit_function(int, char **, char *, aliases *, int *, char **, char *);
 int export(int, char **, char *, aliases *, int *, char **, char *);
