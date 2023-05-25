@@ -20,7 +20,7 @@ int main(int ac, char **av)
 	{
 		if (isatty(0) && ac == 1)
 			write(STDOUT_FILENO, "$ ", 2);
-		if (ac == 1 || _getline(&input) <= 0)
+		if (ac == 1 && _getline(&input) <= 0)
 		{
 			free(input);
 			if (isatty(0))
