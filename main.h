@@ -76,5 +76,4 @@ void del(char **);
 void _free(char **);
 int error(char *, char **, char *, int);
 void error2(char **args, char *path, int n);
-void handl_d(char **line);
 #endif
