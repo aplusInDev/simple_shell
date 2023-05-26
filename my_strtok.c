@@ -9,14 +9,12 @@
 char **_strtok(char *s, const char *delim)
 {
 	static char *next_start;
-	char *token;
-	char **tk;
+	char **token;
 
-	tk = token;
 	next_start = s;
 	if (!next_start || !*next_start)
 		return (NULL);
-	token = next_start;
+	*token = next_start;
 	while (*next_start)
 	{
 		if (_strchr((char *)delim, *next_start))
@@ -26,7 +24,7 @@ char **_strtok(char *s, const char *delim)
 		}
 		next_start++;
 	}
-	return (tk);
+	return (token);
 }
 /**
  * _calloc - allocates memory
