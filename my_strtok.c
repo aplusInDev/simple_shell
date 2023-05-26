@@ -8,23 +8,25 @@
  */
 char **_strtok(char *s, const char *delim)
 {
-        static char *next_start;
-        char *token;
+	static char *next_start;
+	char *token;
+	char **tk;
 
-        next_start = s;
-        if (!next_start || !*next_start)
-                return (NULL);
-        token = next_start;
-        while (*next_start)
-        {
-                if (_strchr((char *)delim, *next_start))
-                {
-                        *next_start++ = '\0';
-                        break;
-                }
-                next_start++;
-        }
-        return (&token);
+	tk = token;
+	next_start = s;
+	if (!next_start || !*next_start)
+		return (NULL);
+	token = next_start;
+	while (*next_start)
+	{
+		if (_strchr((char *)delim, *next_start))
+		{
+			*next_start++ = '\0';
+			break;
+		}
+		next_start++;
+	}
+	return (tk);
 }
 /**
  * _calloc - allocates memory
