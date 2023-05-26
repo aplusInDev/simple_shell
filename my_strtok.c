@@ -6,7 +6,7 @@
  * @delim: string
  * Return: tokens set
  */
-char **_strtok(char *s, const char *delim)
+char *_strtok(char *s, const char *delim)
 {
         static char *next_start;
         char *token;
@@ -24,7 +24,7 @@ char **_strtok(char *s, const char *delim)
                 }
                 next_start++;
         }
-        return (&token);
+        return (token);
 }
 /**
  * _calloc - allocates memory
