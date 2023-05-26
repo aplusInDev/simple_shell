@@ -71,7 +71,6 @@ char *_strstr(char *, char *);
 size_t _strlen(char *);
 int to_string(int, unsigned int);
 int _atoi(char *);
-char *_strchr(char *str, int c);
 char *_strpbrk(char *, char *);
 void del(char **);
 void _free(char **);

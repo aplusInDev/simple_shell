@@ -57,29 +57,9 @@ int _strncmp(const char *s1, char *s2, int n)
  *@s: string
  * Return: length if string
  */
-
 size_t _strlen(char *s)
 {
 	if (!s || *s == '\0')
 		return (0);
 	return (1 + _strlen(s + 1));
-}
-/**
- * _strchr - checks if the current character is equal to c
- * @str: giving string
- * @c: giving character
- *
- * Return: ptr to char or NULL if it fails
- */
-char *_strchr(char *str, int c)
-{
-	while (*str != '\0')
-	{
-		if (*str == c)
-		{
-			return str;
-		}
-		str++;
-	}
-	return NULL;
 }
