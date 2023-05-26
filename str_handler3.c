@@ -64,3 +64,22 @@ size_t _strlen(char *s)
 		return (0);
 	return (1 + _strlen(s + 1));
 }
+/**
+ * _strchr - checks if the current character is equal to c
+ * @str: giving string
+ * @c: giving character
+ *
+ * Return: ptr to char or NULL if it fails
+ */
+char *_strchr(char *str, int c)
+{
+	while (*str != '\0')
+	{
+		if (*str == c)
+		{
+			return str;
+		}
+		str++;
+	}
+	return NULL;
+}
