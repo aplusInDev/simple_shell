@@ -34,7 +34,7 @@ typedef struct cmd_executer
 } cmd_executer;
 int _fork(char *, char **);
 void check_fork_error(char *, char **, char *);
-char *_strtok(char *, const char *);
+char **_strtok(char *, const char *);
 int split_line(char *, char *, aliases *, int *);
 int _getline(char **);
 char *_getenv(char *);
