@@ -6,25 +6,44 @@
  * @delim: string
  * Return: tokens set
  */
-char **_strtok(char *s, const char *delim)
+char **_strtok(char *s, char *delim)
 {
-	static char *next_start;
-	char **token;
+	char **tokens;
+	size_t j = 0, i, len = _strlen(s) + 1;
+	int found = 1, k = 0;
 
-	next_start = s;
-	if (!next_start || !*next_start)
-		return (NULL);
-	*token = next_start;
-	while (*next_start)
+	tokens = (char **)_calloc(len * sizeof(char *), sizeof(char));
+	*tokens = (char *)_calloc(len, sizeof(char));
+	if (!*tokens)
+		free(tokens);
+	for (i = 0; s[i]; i++)
 	{
-		if (_strchr((char *)delim, *next_start))
+		if (exists_within(s[i], delim))
 		{
-			*next_start++ = '\0';
-			break;
+			if (!found)
+			{
+				tokens[k++][j] = '\0';
+				tokens[k] = (char *)_calloc(len, sizeof(char));
+				if (!tokens[k])
+					_free(tokens);
+			}
+			found = 1;
+			j = 0;
 		}
-		next_start++;
+		else
+		{
+			tokens[k][j++] = s[i];
+			found = 0;
+		}
 	}
-	return (token);
+	if (found)
+	{
+		free(tokens[k]);
+		tokens[k] = NULL;
+	}
+	else
+		tokens[k][j] = '\0';
+	return (tokens);
 }
 /**
  * _calloc - allocates memory
